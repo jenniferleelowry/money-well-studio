@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Well Studio - Cocktail Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Money Well Studio</h1>
+            <p class="tagline">Where smart women sip, laugh, and get financially savvy</p>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link active">Cocktails</a>
+                <span class="nav-divider">◆</span>
+                <a href="podcasts.html" class="nav-link">Episodes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Latest Episode Widget -->
+        <section class="latest-episode-widget">
+            <div class="widget-header">
+                <h3>🎙️ Latest Episode</h3>
+            </div>
+            <div class="widget-content">
+                <h4>Dry January, Messy Resolutions & the Art of the Reset</h4>
+                <p class="widget-date">Jan 16, 2026 • 21 min</p>
+                <p class="widget-description">Explore New Year's resolutions and mindful habit formation with Jennifer and Julie. Paired with The Nanus cocktail.</p>
+                <div class="widget-actions">
+                    <a href="podcasts.html" class="widget-button">View All Episodes</a>
+                    <a href="https://podcasts.apple.com/us/podcast/money-well-studio/id1804189491" target="_blank" class="widget-listen">Listen Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="intro">
+            <h2>Our Signature Cocktails</h2>
+            <p>Each episode of Money Well Studio features a carefully crafted cocktail that pairs perfectly with our financial insights. Explore our collection, try the recipes, and share your thoughts!</p>
+        </section>
+
+        <div id="cocktail-list" class="cocktail-grid">
+            <!-- Cocktails will be loaded here by JavaScript -->
+        </div>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+                <!-- Modal content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Money Well Studio. Listen on <a href="https://podcasts.apple.com/us/podcast/money-well-studio/id1804189491" target="_blank">Apple Podcasts</a>, Spotify, and more.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
