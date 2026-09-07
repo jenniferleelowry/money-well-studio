@@ -1,0 +1,1171 @@
+/* Money Well Studio
+   Complete replacement stylesheet
+   Palette inspired by the current Money Well Studio logo,
+   with softer, more muted versions of the teal, green, yellow,
+   orange, sky blue and cream tones.
+*/
+
+/* -----------------------------
+   RESET + DESIGN TOKENS
+------------------------------ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2f766f;
+    --teal: #2f766f;
+    --deep-teal: #255f5a;
+    --dark-teal: #1f4f4b;
+
+    --green: #6e9b58;
+    --lime: #b7c96c;
+
+    --orange: #c97835;
+    --orange-dark: #a95f2b;
+
+    --gold: #d5ad55;
+    --yellow: #e4c866;
+
+    --sky-blue: #8fc4d8;
+    --pale-blue: #d9edf3;
+
+    --cream: #f4f0e5;
+    --background: #f6f3eb;
+    --card-bg: #fffdf8;
+
+    --text-dark: #263b3a;
+    --text-light: #667673;
+
+    --border-color: #b5c9c4;
+    --shadow: 0 10px 28px rgba(38, 59, 58, 0.10);
+    --shadow-hover: 0 14px 34px rgba(38, 59, 58, 0.16);
+    --radius: 14px;
+}
+
+/* -----------------------------
+   GLOBAL
+------------------------------ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Playfair Display', Georgia, serif;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(217, 237, 243, 0.45) 0,
+            rgba(246, 243, 235, 0) 280px
+        ),
+        var(--background);
+    color: var(--text-dark);
+    line-height: 1.65;
+}
+
+a {
+    color: var(--deep-teal);
+}
+
+a:hover {
+    color: var(--orange);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+main {
+    padding: 64px 20px;
+}
+
+/* -----------------------------
+   HEADER
+------------------------------ */
+
+header {
+    background:
+        linear-gradient(
+            135deg,
+            #dceff4 0%,
+            #b9dce5 55%,
+            #a8d0d9 100%
+        );
+    color: var(--text-dark);
+    padding: 72px 20px 56px;
+    text-align: center;
+    border-bottom: 5px solid var(--orange);
+    box-shadow: 0 8px 24px rgba(38, 59, 58, 0.10);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.26);
+    top: -250px;
+    right: -100px;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.20);
+    bottom: -210px;
+    left: -80px;
+}
+
+header .container {
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 3.5em;
+    margin-bottom: 14px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--deep-teal);
+    text-shadow: 2px 3px 0 rgba(201, 120, 53, 0.16);
+}
+
+.tagline {
+    font-size: 1.25em;
+    font-style: italic;
+    color: #486965;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+}
+
+/* -----------------------------
+   NAVIGATION
+------------------------------ */
+
+.main-nav {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: var(--deep-teal);
+    text-decoration: none;
+    font-size: 1em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 9px 18px;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    transition: all 0.25s ease;
+}
+
+.nav-link:hover {
+    color: var(--orange-dark);
+    background: rgba(255, 255, 255, 0.42);
+    border-color: rgba(201, 120, 53, 0.38);
+}
+
+.nav-link.active {
+    color: #ffffff;
+    background: var(--deep-teal);
+    border-color: var(--deep-teal);
+}
+
+.nav-divider {
+    color: var(--orange);
+    font-size: 1em;
+}
+
+/* -----------------------------
+   INTRO
+------------------------------ */
+
+.intro {
+    text-align: center;
+    margin-bottom: 58px;
+    position: relative;
+}
+
+.intro::before {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    border-radius: 999px;
+    margin: 0 auto 22px;
+    background: linear-gradient(
+        90deg,
+        var(--green),
+        var(--yellow),
+        var(--orange)
+    );
+}
+
+.intro h2 {
+    font-size: 2.65em;
+    color: var(--deep-teal);
+    margin-bottom: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.intro p {
+    font-size: 1.12em;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.85;
+}
+
+/* -----------------------------
+   HOMEPAGE LATEST EPISODE WIDGET
+------------------------------ */
+
+.latest-episode-widget {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.widget-header {
+    background: var(--deep-teal);
+    padding: 18px 20px;
+    text-align: center;
+    border-bottom: 4px solid var(--orange);
+}
+
+.widget-header h3 {
+    color: var(--cream);
+    font-size: 1.2em;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0;
+}
+
+.widget-content {
+    padding: 32px;
+}
+
+.widget-content h4 {
+    color: var(--deep-teal);
+    font-size: 1.65em;
+    margin-bottom: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.widget-date {
+    color: var(--text-light);
+    font-size: 0.9em;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+}
+
+.widget-description {
+    color: var(--text-dark);
+    line-height: 1.75;
+    margin-bottom: 24px;
+    font-size: 1.03em;
+}
+
+.widget-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.widget-button,
+.widget-listen {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 0.82em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+    border-radius: 999px;
+}
+
+.widget-button {
+    background: transparent;
+    color: var(--deep-teal);
+    border: 2px solid var(--deep-teal);
+}
+
+.widget-button:hover {
+    background: var(--deep-teal);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.widget-listen {
+    background: var(--orange);
+    color: #ffffff;
+    border: 2px solid var(--orange);
+}
+
+.widget-listen:hover {
+    background: var(--orange-dark);
+    border-color: var(--orange-dark);
+    color: #ffffff;
+    box-shadow: 0 5px 14px rgba(169, 95, 43, 0.24);
+    transform: translateY(-2px);
+}
+
+/* -----------------------------
+   COCKTAIL CARDS
+------------------------------ */
+
+.cocktail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
+    margin-top: 40px;
+}
+
+.cocktail-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    border-top: 5px solid var(--green);
+    position: relative;
+    overflow: hidden;
+}
+
+.cocktail-card::before {
+    content: '';
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    right: -55px;
+    top: -55px;
+    background: rgba(228, 200, 102, 0.16);
+    pointer-events: none;
+}
+
+.cocktail-card::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    top: 22px;
+    right: 22px;
+    border-radius: 999px;
+    background: var(--orange);
+    opacity: 0.65;
+}
+
+.cocktail-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: #9ab8b2;
+}
+
+.cocktail-card h3 {
+    color: var(--deep-teal);
+    font-size: 1.7em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-right: 55px;
+}
+
+.episode-title {
+    font-size: 0.86em;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #d9e3df;
+    padding-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.cocktail-preview {
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    font-size: 0.96em;
+    line-height: 1.7;
+}
+
+.view-details {
+    display: inline-block;
+    background: var(--deep-teal);
+    color: #ffffff;
+    padding: 11px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.82em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+    border: 2px solid var(--deep-teal);
+}
+
+.view-details:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: #ffffff;
+    box-shadow: 0 5px 14px rgba(201, 120, 53, 0.22);
+    transform: translateY(-2px);
+}
+
+/* -----------------------------
+   MODAL
+------------------------------ */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 79, 75, 0.70);
+    overflow-y: auto;
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    background: var(--card-bg);
+    margin: 50px auto;
+    padding: 48px;
+    border-radius: var(--radius);
+    max-width: 850px;
+    position: relative;
+    box-shadow: 0 24px 70px rgba(31, 79, 75, 0.28);
+    border: 1px solid var(--border-color);
+    border-top: 6px solid var(--orange);
+}
+
+.modal-content::before {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    width: 55px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--green);
+}
+
+.close {
+    color: var(--deep-teal);
+    position: absolute;
+    top: 18px;
+    right: 28px;
+    font-size: 38px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    z-index: 10;
+}
+
+.close:hover {
+    color: var(--orange);
+    transform: rotate(90deg);
+}
+
+.modal-header h2 {
+    color: var(--deep-teal);
+    font-size: 2.35em;
+    margin-bottom: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding-right: 45px;
+}
+
+.modal-episode {
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 25px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #d9e3df;
+    letter-spacing: 0.5px;
+}
+
+/* -----------------------------
+   RECIPE / STORY CONTENT
+------------------------------ */
+
+.recipe-section {
+    background: #f1f7f5;
+    padding: 28px;
+    border-radius: 12px;
+    margin: 30px 0;
+    border-left: 5px solid var(--green);
+    position: relative;
+}
+
+.recipe-section::before {
+    content: '';
+    position: absolute;
+    width: 44px;
+    height: 4px;
+    border-radius: 999px;
+    top: 18px;
+    right: 18px;
+    background: var(--yellow);
+}
+
+.recipe-section h3 {
+    color: var(--deep-teal);
+    margin-bottom: 16px;
+    font-size: 1.35em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.recipe-section ul {
+    list-style: none;
+    color: var(--text-dark);
+}
+
+.recipe-section li {
+    padding: 7px 0 7px 24px;
+    position: relative;
+}
+
+.recipe-section li::before {
+    content: '•';
+    position: absolute;
+    left: 3px;
+    color: var(--orange);
+    font-weight: 700;
+}
+
+.story-section {
+    margin: 30px 0;
+    color: var(--text-dark);
+    line-height: 1.9;
+    padding: 25px 28px;
+    background: #eef6f8;
+    border-left: 4px solid var(--sky-blue);
+    border-radius: 10px;
+    font-style: italic;
+}
+
+/* -----------------------------
+   COMMENTS
+------------------------------ */
+
+.comments-section {
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+    position: relative;
+}
+
+.comments-section::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 5px;
+    border-radius: 999px;
+    background: var(--orange);
+}
+
+.comments-section h3 {
+    color: var(--deep-teal);
+    margin-bottom: 25px;
+    font-size: 1.55em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.comment-form {
+    margin-bottom: 35px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 14px 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 1em;
+    background: #ffffff;
+    color: var(--text-dark);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 4px rgba(47, 118, 111, 0.10);
+}
+
+.comment-form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.comment-form button {
+    background: var(--orange);
+    color: #ffffff;
+    padding: 13px 30px;
+    border: 2px solid var(--orange);
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+}
+
+.comment-form button:hover {
+    background: var(--orange-dark);
+    border-color: var(--orange-dark);
+    box-shadow: 0 5px 14px rgba(169, 95, 43, 0.24);
+    transform: translateY(-2px);
+}
+
+.comments-list {
+    margin-top: 30px;
+}
+
+.comment {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    border-left: 4px solid var(--green);
+    border-top: 1px solid #e3ebe8;
+    border-right: 1px solid #e3ebe8;
+    border-bottom: 1px solid #e3ebe8;
+    position: relative;
+}
+
+.comment::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    font-size: 3em;
+    color: rgba(47, 118, 111, 0.14);
+    font-family: Georgia, serif;
+    line-height: 0.5;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 12px;
+    padding-left: 28px;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: var(--deep-teal);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.comment-date {
+    color: var(--text-light);
+    font-size: 0.8em;
+}
+
+.comment-text {
+    color: var(--text-dark);
+    line-height: 1.7;
+    padding-left: 28px;
+}
+
+.no-comments {
+    color: var(--text-light);
+    font-style: italic;
+    text-align: center;
+    padding: 30px;
+    opacity: 0.8;
+}
+
+/* -----------------------------
+   PODCAST PAGE
+------------------------------ */
+
+.latest-episode {
+    margin: 50px 0;
+    position: relative;
+}
+
+.latest-badge {
+    text-align: center;
+    color: var(--orange-dark);
+    font-size: 1.15em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+.latest-card {
+    background:
+        linear-gradient(
+            135deg,
+            #f9fbf7 0%,
+            #edf6f2 100%
+        );
+    padding: 44px;
+    border: 1px solid var(--border-color);
+    border-top: 6px solid var(--green);
+    border-radius: var(--radius);
+    position: relative;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.latest-card::before {
+    content: '';
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: rgba(143, 196, 216, 0.20);
+    right: -60px;
+    top: -70px;
+    pointer-events: none;
+}
+
+.latest-header {
+    position: relative;
+    z-index: 1;
+}
+
+.latest-header h3 {
+    color: var(--deep-teal);
+    font-size: 2.15em;
+    margin-bottom: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+
+.episode-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 0.94em;
+    flex-wrap: wrap;
+}
+
+.episode-date,
+.episode-duration {
+    color: var(--text-light);
+    letter-spacing: 0.5px;
+}
+
+.meta-divider {
+    color: var(--orange);
+}
+
+.latest-description {
+    color: var(--text-dark);
+    font-size: 1.08em;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.cocktail-pairing {
+    background: #fff7e8;
+    padding: 14px 18px;
+    margin: 24px 0;
+    border-left: 4px solid var(--yellow);
+    border-radius: 8px;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.pairing-icon {
+    font-size: 1.4em;
+}
+
+.listen-button {
+    display: inline-block;
+    background: var(--orange);
+    color: #ffffff;
+    padding: 14px 34px;
+    border: 2px solid var(--orange);
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.listen-button:hover {
+    background: var(--orange-dark);
+    border-color: var(--orange-dark);
+    color: #ffffff;
+    box-shadow: 0 6px 16px rgba(169, 95, 43, 0.25);
+    transform: translateY(-2px);
+}
+
+/* -----------------------------
+   EPISODE GRID
+------------------------------ */
+
+.episodes-section {
+    margin-top: 80px;
+}
+
+.section-heading {
+    color: var(--deep-teal);
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 46px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 18px;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75px;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(
+        90deg,
+        var(--green),
+        var(--yellow),
+        var(--orange)
+    );
+}
+
+.episode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 28px;
+}
+
+.episode-card {
+    background: var(--card-bg);
+    padding: 29px;
+    border: 1px solid var(--border-color);
+    border-top: 5px solid var(--sky-blue);
+    border-radius: var(--radius);
+    position: relative;
+    transition: all 0.25s ease;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.episode-card::before {
+    content: '';
+    position: absolute;
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    background: rgba(183, 201, 108, 0.13);
+    right: -26px;
+    top: -26px;
+    pointer-events: none;
+}
+
+.episode-card:hover {
+    transform: translateY(-5px);
+    border-color: #9ebbb5;
+    box-shadow: var(--shadow-hover);
+}
+
+.episode-number {
+    color: var(--orange-dark);
+    font-size: 0.79em;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    margin-bottom: 9px;
+    font-weight: 700;
+}
+
+.episode-card h4 {
+    color: var(--deep-teal);
+    font-size: 1.4em;
+    margin-bottom: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 1.35;
+    position: relative;
+    z-index: 1;
+}
+
+.episode-card .episode-meta {
+    margin-bottom: 15px;
+    font-size: 0.85em;
+}
+
+.episode-description {
+    color: var(--text-dark);
+    line-height: 1.75;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+}
+
+.cocktail-tag {
+    background: #eef7f4;
+    padding: 9px 12px;
+    margin-bottom: 20px;
+    border-left: 3px solid var(--green);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+    color: var(--text-dark);
+}
+
+.tag-icon {
+    font-size: 1.1em;
+}
+
+.episode-link {
+    display: inline-block;
+    background: var(--deep-teal);
+    color: #ffffff;
+    padding: 10px 23px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.82em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+    border: 2px solid var(--deep-teal);
+}
+
+.episode-link:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: #ffffff;
+    box-shadow: 0 5px 14px rgba(201, 120, 53, 0.22);
+    transform: translateY(-2px);
+}
+
+/* -----------------------------
+   FOOTER
+------------------------------ */
+
+footer {
+    background: var(--deep-teal);
+    color: var(--cream);
+    text-align: center;
+    padding: 44px 20px;
+    margin-top: 80px;
+    border-top: 5px solid var(--orange);
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 5px;
+    background: var(--yellow);
+}
+
+footer a {
+    color: var(--yellow);
+    text-decoration: none;
+    transition: color 0.25s ease;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+/* -----------------------------
+   RESPONSIVE
+------------------------------ */
+
+@media (max-width: 768px) {
+    header {
+        padding: 54px 18px 42px;
+    }
+
+    header h1 {
+        font-size: 2.05em;
+        letter-spacing: 3px;
+    }
+
+    .tagline {
+        font-size: 1em;
+    }
+
+    .main-nav {
+        gap: 8px;
+    }
+
+    .nav-link {
+        font-size: 0.9em;
+        padding: 8px 14px;
+        letter-spacing: 1.4px;
+    }
+
+    .nav-divider {
+        display: none;
+    }
+
+    main {
+        padding: 44px 16px;
+    }
+
+    .latest-episode-widget {
+        margin: 0 0 40px;
+    }
+
+    .widget-content {
+        padding: 22px;
+    }
+
+    .widget-content h4 {
+        font-size: 1.35em;
+    }
+
+    .widget-actions {
+        flex-direction: column;
+    }
+
+    .widget-button,
+    .widget-listen {
+        text-align: center;
+        width: 100%;
+    }
+
+    .intro h2 {
+        font-size: 1.8em;
+        letter-spacing: 1.3px;
+    }
+
+    .cocktail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .episode-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .latest-card {
+        padding: 26px;
+    }
+
+    .latest-header h3 {
+        font-size: 1.6em;
+    }
+
+    .modal-content {
+        margin: 18px;
+        padding: 32px 24px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.75em;
+    }
+
+    .comment-header {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.7em;
+        letter-spacing: 2px;
+    }
+
+    .container {
+        padding: 0 14px;
+    }
+
+    .intro h2,
+    .section-heading {
+        font-size: 1.55em;
+    }
+
+    .cocktail-card,
+    .episode-card {
+        padding: 24px;
+    }
+
+    .cocktail-card h3 {
+        font-size: 1.45em;
+    }
+
+    .latest-card {
+        padding: 22px;
+    }
+
+    .listen-button {
+        width: 100%;
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
