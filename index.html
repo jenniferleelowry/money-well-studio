@@ -4,37 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Money Well Studio - Cocktail Collection</title>
+    <meta name="description" content="Cocktails from Money Well Studio, paired with smart conversations about money, life and economics.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <div class="container">
-            <h1>Money Well Studio</h1>
-            <p class="tagline">Where smart women sip, laugh, and get financially savvy</p>
-            <nav class="main-nav">
-                <a href="index.html" class="nav-link active">Cocktails</a>
-                <span class="nav-divider">◆</span>
-                <a href="podcasts.html" class="nav-link">Episodes</a>
-            </nav>
+            <div class="site-header-inner">
+                <div class="site-header-copy">
+                    <h1>Money Well Studio</h1>
+                    <p class="tagline">Money, life, and the occasional cocktail.</p>
+                    <nav class="main-nav" aria-label="Main navigation">
+                        <a href="index.html" class="nav-link active" aria-current="page">Cocktails</a>
+                        <span class="nav-divider">◆</span>
+                        <a href="podcasts.html" class="nav-link">Episodes</a>
+                    </nav>
+                </div>
+
+                <a href="index.html" class="site-header-logo-link" aria-label="Money Well Studio home">
+                    <img src="money-well-studio-logo.webp" alt="Money Well Studio" class="site-header-logo">
+                </a>
+            </div>
         </div>
     </header>
 
     <main class="container">
-        <!-- Latest Episode Widget -->
         <section class="latest-episode-widget">
             <div class="widget-header">
                 <h3>🎙️ Latest Episode</h3>
             </div>
             <div class="widget-content">
-                <h4>Dry January, Messy Resolutions & the Art of the Reset</h4>
-                <p class="widget-date">Jan 16, 2026 • 21 min</p>
-                <p class="widget-description">Explore New Year's resolutions and mindful habit formation with Jennifer and Julie. Paired with The Nanus cocktail.</p>
+                <h4>Dolly Parton, Dirty Martinis, and the Fed’s Jackson Hole Getaway</h4>
+                <p class="widget-date">Sep 6, 2026 • 27 min</p>
+                <p class="widget-description">Dolly Parton, dirty martinis, and the Federal Reserve meet in a conversation about women, ambition, Jackson Hole, and what the Fed’s annual gathering means for money. Paired with the Dirt Road Martini.</p>
                 <div class="widget-actions">
                     <a href="podcasts.html" class="widget-button">View All Episodes</a>
-                    <a href="https://podcasts.apple.com/us/podcast/money-well-studio/id1804189491" target="_blank" class="widget-listen">Listen Now</a>
+                    <a href="https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE" target="_blank" rel="noopener noreferrer" class="widget-listen">Listen Now</a>
                 </div>
             </div>
         </section>
@@ -44,23 +52,19 @@
             <p>Each episode of Money Well Studio features a carefully crafted cocktail that pairs perfectly with our financial insights. Explore our collection, try the recipes, and share your thoughts!</p>
         </section>
 
-        <div id="cocktail-list" class="cocktail-grid">
-            <!-- Cocktails will be loaded here by JavaScript -->
-        </div>
+        <div id="cocktail-list" class="cocktail-grid"></div>
     </main>
 
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <div id="modal-body">
-                <!-- Modal content will be loaded here -->
-            </div>
+            <div id="modal-body"></div>
         </div>
     </div>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Money Well Studio. Listen on <a href="https://podcasts.apple.com/us/podcast/money-well-studio/id1804189491" target="_blank">Apple Podcasts</a>, Spotify, and more.</p>
+            <p>&copy; 2026 Money Well Studio. Listen on <a href="https://podcasts.apple.com/us/podcast/money-well-studio/id1804189491" target="_blank" rel="noopener noreferrer">Apple Podcasts</a>, Spotify, and more.</p>
         </div>
     </footer>
 
