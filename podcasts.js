@@ -118,7 +118,8 @@ const episodes = [
         duration: "30 min",
         description: "A tour through the evolution of retirement and the modern tools that put more responsibility on individuals, including 401(k)s, traditional and Roth IRAs, HSAs, and the tax-day IRA contribution deadline.",
         cocktail: "The Cubicle Liberator",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-retirement-101-before-tax-day.html"
     },
     {
         season: 2,
@@ -128,7 +129,8 @@ const episodes = [
         duration: "30 min",
         description: "Jennifer and Julie explore the new government-backed investment accounts for children, the power of starting early, and what families should understand about contributions, compounding, and long-term outcomes.",
         cocktail: "The Michael Dell 503A",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-530a-kids-financial-future.html"
     },
     {
         season: 2,
@@ -138,7 +140,8 @@ const episodes = [
         duration: "30 min",
         description: "Part 2 moves from the history of the gender pay gap to the policy architecture behind women’s earnings, with Vasu Reddy of the National Women’s Law Center discussing measurement, caregiving penalties, occupational segregation, and pay transparency.",
         cocktail: "The Saramago",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-gender-pay-gap-part-2-vasu-reddy.html"
     },
     {
         season: 2,
@@ -148,7 +151,8 @@ const episodes = [
         duration: "29 min",
         description: "A historical look at how women’s labor, wages, and economic value developed over time, and why the gender pay gap has proved so persistent.",
         cocktail: "The Fair Share",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-gender-pay-gap-part-1.html"
     },
     {
         season: 2,
@@ -158,7 +162,8 @@ const episodes = [
         duration: "26 min",
         description: "Valentine’s Day becomes a case study in commercialization, social expectations, relationship pressure, and why money conversations matter more than performative spending.",
         cocktail: "Cupid’s Arrow Lemon Drop",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-economics-of-love-valentines-day.html"
     },
     {
         season: 2,
@@ -168,7 +173,8 @@ const episodes = [
         duration: "21 min",
         description: "Girl Scout Cookie season becomes a lesson in scarcity marketing, sales, goal-setting, resilience, teamwork, and the economics behind one of America’s best-known seasonal products.",
         cocktail: "Thin Mint–Inspired Martini",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-girl-scout-cookies-economics.html"
     },
     {
         season: 2,
@@ -178,7 +184,8 @@ const episodes = [
         duration: "21 min",
         description: "Hosts Jennifer and Julie discuss New Year's resolutions, the origins of Dry January, and a more forgiving approach to habit formation and self-improvement.",
         cocktail: "The Nanus",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-dry-january-resolutions-reset.html"
     },
     {
         season: 2,
@@ -188,7 +195,8 @@ const episodes = [
         duration: "15 min",
         description: "Drawing inspiration from Janus, the Roman god of beginnings and endings, the hosts explore why resolutions often fail and how looking backward can help us move forward.",
         cocktail: "The Janus",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-two-faces-of-new-years.html"
     },
     {
         season: 1,
