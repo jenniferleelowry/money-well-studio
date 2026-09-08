@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260907-final1">
+    <link rel="stylesheet" href="styles.css?v=20260908-newsletter1">
 </head>
 <body>
     <header class="site-header">
@@ -71,6 +71,48 @@
         </div>
     </div>
 
+
+    <!-- Money Well Studio newsletter signup popup -->
+    <div id="newsletter-popup" class="newsletter-overlay" aria-hidden="true">
+        <div class="newsletter-popup" role="dialog" aria-modal="true" aria-labelledby="newsletter-title">
+            <button
+                type="button"
+                class="newsletter-close"
+                id="newsletter-close"
+                aria-label="Close mailing list signup">
+                &times;
+            </button>
+
+            <h2 id="newsletter-title">Money worth opening your inbox for.</h2>
+
+            <p>
+                Join the Money Well Studio list for new episodes,
+                useful money stuff, and the occasional cocktail.
+            </p>
+
+            <form id="newsletter-form">
+                <input
+                    type="text"
+                    id="newsletter-first-name"
+                    name="firstName"
+                    placeholder="First name"
+                    autocomplete="given-name">
+
+                <input
+                    type="email"
+                    id="newsletter-email"
+                    name="email"
+                    placeholder="Email address"
+                    autocomplete="email"
+                    required>
+
+                <button type="submit">Join the List</button>
+            </form>
+
+            <p id="newsletter-message" class="newsletter-message" aria-live="polite"></p>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
             <p>&copy; 2026 Money Well Studio. Listen on <a href="https://podcasts.apple.com/us/podcast/money-well-studio/id1804189491" target="_blank" rel="noopener noreferrer">Apple Podcasts</a> or <a href="https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE" target="_blank" rel="noopener noreferrer">Spotify</a>.</p>
@@ -78,5 +120,6 @@
     </footer>
 
     <script src="script.js?v=20260907-final1"></script>
+    <script src="newsletter.js?v=20260908-newsletter1"></script>
 </body>
 </html>
