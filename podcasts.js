@@ -8,7 +8,8 @@ const episodes = [
         duration: "27 min",
         description: "Dolly Parton, dirty martinis, and the Federal Reserve meet in a conversation about women, generosity, ambition, Jackson Hole, and what the Fed’s annual gathering means for money.",
         cocktail: "Dirt Road Martini",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-dolly-parton-fed-jackson-hole.html"
     },
     {
         season: 2,
@@ -18,7 +19,8 @@ const episodes = [
         duration: "26 min",
         description: "Jennifer and Julie take an analytical look at one of the biggest financial decisions families make: how to compare colleges based on price, outcomes, debt, graduation rates, earnings, and what a school is actually worth for a particular student.",
         cocktail: "The FAFSA Fizz",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-college-dream-school-cost.html"
     },
     {
         season: 2,
@@ -28,7 +30,8 @@ const episodes = [
         duration: "33 min",
         description: "A practical conversation about trust, financial independence, caregiving, prenups, and why staying informed and involved in the household finances matters even in a strong marriage.",
         cocktail: "Duchman Dry Rosé",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-prenups-financial-independence.html"
     },
     {
         season: 2,
@@ -38,7 +41,8 @@ const episodes = [
         duration: "30 min",
         description: "Why does the Fed target inflation at all? This episode covers CPI, PCE, purchasing power, Social Security, healthcare costs, and how decades of inflation can reshape a retirement plan.",
         cocktail: "The Shrinkflation Sour",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-inflation-retirement-risk.html"
     },
     {
         season: 2,
@@ -48,7 +52,8 @@ const episodes = [
         duration: "29 min",
         description: "Jennifer and Julie connect America’s long history of tax policy to the new child investment accounts known as Trump Accounts or Section 530A accounts, including eligibility, the federal pilot contribution, taxes, and investment restrictions.",
         cocktail: "Patriotic Pepper Punch",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-trump-accounts-530a.html"
     },
     {
         season: 2,
@@ -322,11 +327,14 @@ function loadLatestEpisode() {
     if (!latestContent || !episodes.length) return;
 
     const latest = episodes[0];
+    const titleMarkup = latest.page
+        ? `<a class="episode-title-link" href="${latest.page}">${latest.title}</a>`
+        : latest.title;
 
     latestContent.innerHTML = `
         <div class="latest-card">
             <div class="latest-header">
-                <h3>${latest.title}</h3>
+                <h3>${titleMarkup}</h3>
                 <div class="episode-meta">
                     <span class="episode-date">${latest.date}</span>
                     <span class="meta-divider">•</span>
@@ -338,7 +346,10 @@ function loadLatestEpisode() {
                 <span class="pairing-icon">🍸</span>
                 <span>Paired with: <strong>${latest.cocktail}</strong></span>
             </div>` : ''}
-            <a href="${latest.listen}" target="_blank" rel="noopener noreferrer" class="listen-button">Listen on Spotify</a>
+            <div class="episode-card-actions">
+                ${latest.page ? `<a href="${latest.page}" class="episode-link">Episode Notes & Resources</a>` : ''}
+                <a href="${latest.listen}" target="_blank" rel="noopener noreferrer" class="listen-button">Listen on Spotify</a>
+            </div>
         </div>
     `;
 }
@@ -355,10 +366,15 @@ function loadAllEpisodes() {
 function createEpisodeCard(episode) {
     const card = document.createElement('div');
     card.className = 'episode-card';
+    if (episode.page) card.classList.add('has-episode-page');
+
+    const titleMarkup = episode.page
+        ? `<a class="episode-title-link" href="${episode.page}">${episode.title}</a>`
+        : episode.title;
 
     card.innerHTML = `
         <div class="episode-number">Season ${episode.season} • Episode ${episode.episode}</div>
-        <h4>${episode.title}</h4>
+        <h4>${titleMarkup}</h4>
         <div class="episode-meta">
             <span class="episode-date">${episode.date}</span>
             <span class="meta-divider">•</span>
@@ -369,8 +385,23 @@ function createEpisodeCard(episode) {
             <span class="tag-icon">🍸</span>
             <span>${episode.cocktail}</span>
         </div>` : ''}
-        <a href="${episode.listen}" target="_blank" rel="noopener noreferrer" class="episode-link">Listen on Spotify</a>
+        <div class="episode-card-actions">
+            ${episode.page ? `<a href="${episode.page}" class="episode-link">Episode Notes & Resources</a>` : ''}
+            <a href="${episode.listen}" target="_blank" rel="noopener noreferrer" class="episode-link spotify-link">Listen on Spotify</a>
+        </div>
     `;
+
+    if (episode.page) {
+        card.addEventListener('click', function(event) {
+            if (event.target.closest('a')) return;
+            window.location.href = episode.page;
+        });
+        card.setAttribute('role', 'link');
+        card.setAttribute('tabindex', '0');
+        card.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') window.location.href = episode.page;
+        });
+    }
 
     return card;
 }
