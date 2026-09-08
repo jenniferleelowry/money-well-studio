@@ -63,7 +63,8 @@ const episodes = [
         duration: "31 min",
         description: "The final AI and work episode brings the conversation home to parents and students: what skills matter, how AI changes career preparation, and why adaptability, judgment, communication, and AI literacy matter across majors.",
         cocktail: "The Paper Plane",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-ai-parenting-career-advice.html"
     },
     {
         season: 2,
@@ -73,7 +74,8 @@ const episodes = [
         duration: "30 min",
         description: "A starter kit for new graduates and early-career workers navigating a tighter job market where AI can already handle many traditional entry-level tasks.",
         cocktail: "The Classic Martini",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-ai-first-job-starter-kit.html"
     },
     {
         season: 2,
@@ -83,7 +85,8 @@ const episodes = [
         duration: "36 min",
         description: "A mid-career guide to figuring out which parts of your job AI can do, which parts it can assist with, and where human judgment, context, trust, and accountability still create value.",
         cocktail: "Mai Tai",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-ai-mid-career-work.html"
     },
     {
         season: 2,
@@ -93,7 +96,8 @@ const episodes = [
         duration: "26 min",
         description: "The first episode in the AI series looks backward at industrial revolutions, technological displacement, productivity, and who benefits from major economic transitions to better understand the current AI moment.",
         cocktail: "Dark ’n Stormy",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-ai-industrial-revolution-lessons.html"
     },
     {
         season: 2,
@@ -103,7 +107,8 @@ const episodes = [
         duration: "22 min",
         description: "A plain-English look at dividends: where they came from, what they say about a company, why yield can mislead, how dividends are taxed, and how reinvestment can contribute to long-term wealth.",
         cocktail: "The Dividend’s Tale",
-        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE"
+        listen: "https://open.spotify.com/show/38ZOTHwMXiRPQtSWMQK1oE",
+        page: "episode-dividends-investing.html"
     },
     {
         season: 2,
