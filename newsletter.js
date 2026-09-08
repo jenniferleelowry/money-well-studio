@@ -14,7 +14,7 @@
  * A visitor who subscribes will not see it again on that browser.
  */
 
-const NEWSLETTER_ENDPOINT = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+const NEWSLETTER_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwMEZ81D8ojsgcva0DSGihRSAmb7pLRYm-6Xj9QRMYUem9Nwqds_Vm8AMI7LeN1xWssdA/exec';
 
 const NEWSLETTER_CONFIG = {
     delayMs: 10000,       // 10 seconds
