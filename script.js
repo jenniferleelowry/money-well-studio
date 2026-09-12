@@ -1,6 +1,20 @@
 // Cocktail and drink-pairing data from Money Well Studio show notes
-// Site data version: 20260907-final1
+// Site data version: 20260912-kayvon
 const cocktails = [
+    {
+        id: 33,
+        name: "Love on the Rocks",
+        episode: "Season 2 • Episode 19: Wedded Bliss: What Happens to Yours When It Becomes Ours?",
+        preview: "A refreshing tequila, lime and tonic cocktail for a candid conversation about prenups, property and marriage.",
+        ingredients: [
+            "2 oz tequila",
+            "1 oz fresh lime juice",
+            "Tonic water",
+            "Ice",
+            "Optional Tajin or salt for the rim",
+        ],
+        story: "Love on the Rocks pairs a bright tequila highball with the Kayvon Rashidi episode: clear, direct and easier to enjoy when everyone knows what is in the glass."
+    },
     {
         id: 1,
         name: "Dirt Road Martini",

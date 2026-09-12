@@ -2,6 +2,17 @@
 const episodes = [
     {
         season: 2,
+        episode: 19,
+        title: "Wedded Bliss: What Happens to Yours When It Becomes Ours? With Special Guest and Family Law Attorney Kayvon Rashidi",
+        date: "Sep 14, 2026",
+        duration: "29 min",
+        description: "Family law attorney and mediator Kayvon Rashidi joins Jennifer and Julie for a practical conversation about prenups, postnups, financial disclosure, business ownership, inheritance, second marriages, children, wills, trusts and what happens when couples move across state lines.",
+        cocktail: "Love on the Rocks",
+        listen: "https://open.spotify.com/episode/1eBzVl5cnnAcX72vWkPu0B",
+        page: "episode-wedded-bliss-prenups-kayvon-rashidi.html"
+    },
+    {
+        season: 2,
         episode: 18,
         title: "Dolly Parton, Dirty Martinis, and the Fed’s Jackson Hole Getaway",
         date: "Aug 31, 2026",
