@@ -1,10 +1,6 @@
 /*
  * Money Well Studio newsletter popup
  *
- * SETUP:
- * Replace YOUR_GOOGLE_APPS_SCRIPT_URL_HERE below with the /exec URL
- * from your deployed Google Apps Script web app.
- *
  * The popup is shown when EITHER:
  *   1) the visitor has been on the page for 10 seconds, OR
  *   2) the visitor has scrolled 40% down the page,
@@ -17,13 +13,13 @@
 const NEWSLETTER_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwMEZ81D8ojsgcva0DSGihRSAmb7pLRYm-6Xj9QRMYUem9Nwqds_Vm8AMI7LeN1xWssdA/exec';
 
 const NEWSLETTER_CONFIG = {
-    delayMs: 10000,       // 10 seconds
-    scrollPercent: 40,    // show after 40% page scroll
-    dismissDays: 30       // wait 30 days after dismissal
+    delayMs: 10000,
+    scrollPercent: 40,
+    dismissDays: 30
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    const popup = document.getElementById('newsletter-popup');
+    const popup = ensureNewsletterPopup();
     const closeButton = document.getElementById('newsletter-close');
     const form = document.getElementById('newsletter-form');
     const message = document.getElementById('newsletter-message');
@@ -55,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (timer) clearTimeout(timer);
         window.removeEventListener('scroll', handleScroll);
 
-        // Put keyboard focus in the first field when possible.
         setTimeout(() => {
             if (firstNameInput) firstNameInput.focus();
         }, 100);
@@ -72,18 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (scrollableHeight <= 0) return;
 
-        const percent =
-            (window.scrollY / scrollableHeight) * 100;
+        const percent = (window.scrollY / scrollableHeight) * 100;
 
         if (percent >= NEWSLETTER_CONFIG.scrollPercent) {
             showPopup();
         }
     }
 
-    // Trigger 1: elapsed time.
     timer = setTimeout(showPopup, NEWSLETTER_CONFIG.delayMs);
-
-    // Trigger 2: scroll depth.
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     closeButton.addEventListener('click', () => {
@@ -99,14 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     });
 
-    // Close with Escape.
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && popup.classList.contains('show')) {
             closeButton.click();
         }
     });
 
-    // Close by clicking outside the dialog.
     popup.addEventListener('click', (event) => {
         if (event.target === popup) {
             closeButton.click();
@@ -126,8 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             !NEWSLETTER_ENDPOINT ||
             NEWSLETTER_ENDPOINT.includes('YOUR_GOOGLE_APPS_SCRIPT_URL_HERE')
         ) {
-            message.textContent =
-                'Mailing-list signup is not connected yet.';
+            message.textContent = 'Mailing-list signup is not connected yet.';
             return;
         }
 
@@ -135,11 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
         message.textContent = 'Adding you...';
 
         try {
-            /*
-             * Google Apps Script cross-origin forms work most simply with
-             * no-cors. The request is sent successfully, but the browser
-             * cannot read the returned response body.
-             */
             await fetch(NEWSLETTER_ENDPOINT, {
                 method: 'POST',
                 mode: 'no-cors',
@@ -153,21 +136,47 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
             });
 
-            localStorage.setItem(
-                'moneyWellNewsletterSubscribed',
-                'true'
-            );
+            localStorage.setItem('moneyWellNewsletterSubscribed', 'true');
 
-            message.textContent =
-                'You’re in. Welcome to Money Well Studio.';
+            message.textContent = "You're in. Welcome to Money Well Studio.";
 
             setTimeout(hidePopup, 1800);
-
         } catch (error) {
             console.error('Newsletter signup failed:', error);
-            message.textContent =
-                'Something went wrong. Please try again.';
+            message.textContent = 'Something went wrong. Please try again.';
             submitButton.disabled = false;
         }
     });
 });
+
+function ensureNewsletterPopup() {
+    const existingPopup = document.getElementById('newsletter-popup');
+
+    if (existingPopup) return existingPopup;
+
+    const popup = document.createElement('div');
+    popup.id = 'newsletter-popup';
+    popup.className = 'newsletter-popup';
+    popup.setAttribute('aria-hidden', 'true');
+
+    popup.innerHTML = `
+        <div class="newsletter-dialog" role="dialog" aria-modal="true" aria-labelledby="newsletter-title">
+            <button id="newsletter-close" class="newsletter-close" type="button" aria-label="Close newsletter signup">&times;</button>
+            <p class="newsletter-eyebrow">Money Well Studio</p>
+            <h2 id="newsletter-title">Join us for money, life, and the occasional cocktail.</h2>
+            <p class="newsletter-copy">Get new episodes, resources, and notes from Jennifer and Julie in your inbox.</p>
+            <form id="newsletter-form" class="newsletter-form">
+                <label for="newsletter-first-name">First name</label>
+                <input id="newsletter-first-name" name="firstName" type="text" autocomplete="given-name">
+                <label for="newsletter-email">Email</label>
+                <input id="newsletter-email" name="email" type="email" autocomplete="email" required>
+                <button type="submit">Join the list</button>
+                <p id="newsletter-message" class="newsletter-message" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    `;
+
+    document.body.appendChild(popup);
+
+    return popup;
+}
