@@ -2,6 +2,17 @@
 const episodes = [
     {
         season: 2,
+        episode: 20,
+        title: "The College Series: Before You Fund That 529 -- Rethinking Your Kids’ College, Funding Hacks and the Value of a Degree in the Age of AI -- with Special Guest Javid Jamae",
+        date: "Sep 28, 2026",
+        duration: "Coming Monday",
+        description: "Javid Jamae joins Jennifer and Julie for a wide-ranging conversation about 529 plans, college budgets, taxable investment accounts, student loans, generational wealth and how AI may affect the future value of different degrees, skills and career paths.",
+        cocktail: "None",
+        listen: "https://open.spotify.com/episode/0F6chFaN9kv4clUQYnNyHB",
+        page: "episode-paying-for-college-part-2-javid-jamae.html"
+    },
+    {
+        season: 2,
         episode: 19,
         title: "Wedded Bliss: What Happens to Yours When It Becomes Ours? With Special Guest and Family Law Attorney Kayvon Rashidi",
         date: "Sep 14, 2026",
