@@ -3,7 +3,7 @@ const episodes = [
     {
         season: 2,
         episode: 20,
-        title: "The College Series: Before You Fund That 529 -- Rethinking Your Kids’ College, Funding Hacks and the Value of a Degree in the Age of AI -- with Special Guest Javid Jamae",
+        title: "Before You Fund That 529: College Funding, AI, and the Value of a Degree with Special Guest Javid Jamae (The College Series, Episode 2)",
         date: "Sep 28, 2026",
         duration: "Coming Monday",
         description: "Javid Jamae joins Jennifer and Julie for a wide-ranging conversation about 529 plans, college budgets, taxable investment accounts, student loans, generational wealth and how AI may affect the future value of different degrees, skills and career paths.",
