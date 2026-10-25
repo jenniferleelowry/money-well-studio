@@ -1,11 +1,12 @@
 // Podcast episodes data from Money Well Studio
 const episodes = [
+    {"season": 2, "episode": 21, "title": "Paying to Suffer: The Strange Economics of Marathons with Special Guest Steve Sisson", "date": "Oct 12, 2026", "duration": "59 min", "description": "Steve Sisson of Telos Running joins Jennifer and Julie to explore marathon costs, destination races and why runners pay to push their limits. Drink of choice: Michelob Ultra.", "cocktail": "Michelob Ultra", "listen": "https://podcasters.spotify.com/pod/show/moneywellstudio/episodes/Paying-to-Suffer-The-Strange-Economics-of-Marathons-with-Special-Guest-Steve-Sisson-e3qbn7p", "page": "episode-marathon-economics-steve-sisson.html"},
     {
         season: 2,
         episode: 20,
         title: "Before You Fund That 529: College Funding, AI, and the Value of a Degree with Special Guest Javid Jamae (The College Series, Episode 2)",
         date: "Sep 28, 2026",
-        duration: "Coming Monday",
+        duration: "31 min",
         description: "Javid Jamae joins Jennifer and Julie for a wide-ranging conversation about 529 plans, college budgets, taxable investment accounts, student loans, generational wealth and how AI may affect the future value of different degrees, skills and career paths.",
         cocktail: "None",
         listen: "https://open.spotify.com/episode/0F6chFaN9kv4clUQYnNyHB",

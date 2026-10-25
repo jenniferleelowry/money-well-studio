@@ -1,6 +1,7 @@
 // Cocktail and drink-pairing data from Money Well Studio show notes
 // Site data version: 20260912-kayvon
 const cocktails = [
+    {"id": 34, "name": "Michelob Ultra", "episode": "Season 2 • Episode 21: Paying to Suffer: The Strange Economics of Marathons", "preview": "The featured beer for our marathon conversation with running coach Steve Sisson.", "ingredients": ["Michelob Ultra, served chilled"], "story": "Our drink of choice for the Steve Sisson episode. Tune in for Steve’s candid verdict on the featured beer and a conversation about the cost and rewards of running."},
     {
         id: 33,
         name: "Love on the Rocks",
