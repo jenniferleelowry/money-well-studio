@@ -1,5 +1,6 @@
 // Podcast episodes data from Money Well Studio
 const episodes = [
+{"season": 2, "episode": 22, "title": "Back to School, on My Own Dime: Grad School Without the Ramen Budget — With Special Guest Alex Black", "date": "Oct 26, 2026", "duration": "24 min", "description": "Alex Black joins Jennifer and Julie to discuss paying for graduate school, student loans, budgeting beyond tuition and bringing work experience to an MBA. Paired with Alex’s Orange-Splash Margarita.", "cocktail": "Alex’s Orange-Splash Margarita", "listen": "https://open.spotify.com/episode/4VTlCmqY2q9LcwlOkE9fyb", "page": "episode-grad-school-alex-black.html"},
     {"season": 2, "episode": 21, "title": "Paying to Suffer: The Strange Economics of Marathons with Special Guest Steve Sisson", "date": "Oct 12, 2026", "duration": "59 min", "description": "Steve Sisson of Telos Running joins Jennifer and Julie to explore marathon costs, destination races and why runners pay to push their limits. Drink of choice: Michelob Ultra.", "cocktail": "Michelob Ultra", "listen": "https://podcasters.spotify.com/pod/show/moneywellstudio/episodes/Paying-to-Suffer-The-Strange-Economics-of-Marathons-with-Special-Guest-Steve-Sisson-e3qbn7p", "page": "episode-marathon-economics-steve-sisson.html"},
     {
         season: 2,

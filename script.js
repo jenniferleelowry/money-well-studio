@@ -1,6 +1,7 @@
 // Cocktail and drink-pairing data from Money Well Studio show notes
 // Site data version: 20260912-kayvon
 const cocktails = [
+{"id": 35, "name": "Alex’s Orange-Splash Margarita", "episode": "Season 2 • Episode 22: Back to School, on My Own Dime", "preview": "Alex’s margarita on the rocks, without salt, with a splash of orange juice to soften the tartness.", "ingredients": ["2 oz tequila", "1 oz freshly squeezed lime juice", "¾ oz triple sec", "½–1 oz orange juice, to taste", "Ice", "Optional lime wedge or orange slice for garnish"], "story": "Shake tequila, lime juice, triple sec and orange juice with ice until chilled. Strain over fresh ice with no salt rim; garnish if desired. Start with ½ oz orange juice and add more to taste. An Alex-approved pairing for our graduate-school conversation.", "page": "episode-grad-school-alex-black.html"},
     {"id": 34, "name": "Michelob Ultra", "episode": "Season 2 • Episode 21: Paying to Suffer: The Strange Economics of Marathons", "preview": "The featured beer for our marathon conversation with running coach Steve Sisson.", "ingredients": ["Michelob Ultra, served chilled"], "story": "Our drink of choice for the Steve Sisson episode. Tune in for Steve’s candid verdict on the featured beer and a conversation about the cost and rewards of running."},
     {
         id: 33,
@@ -522,6 +523,7 @@ function createCocktailCard(cocktail) {
         <p class="episode-title">${cocktail.episode}</p>
         <p class="cocktail-preview">${cocktail.preview}</p>
         <span class="view-details">View Recipe & Comment</span>
+        ${cocktail.page ? `<a href="${cocktail.page}#cocktail" onclick="event.stopPropagation()">Episode &amp; Full Recipe</a>` : ''}
     `;
 
     return card;
